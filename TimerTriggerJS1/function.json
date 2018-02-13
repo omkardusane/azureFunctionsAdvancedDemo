@@ -1,0 +1,36 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 30 10 * * 1-5"
+    },
+    {
+      "type": "queue",
+      "name": "messageToSend",
+      "queueName": "send-q",
+      "connection": "AzureWebJobsDashboard",
+      "direction": "out"
+    },
+    {
+      "type": "documentDB",
+      "name": "userSignedToday",
+      "databaseName": "chatbot-db-905",
+      "collectionName": "userEvents",
+      "sqlQuery": "SELECT c.empid from c where c.sign.sentOn > udf.pr1() and c.sign.type='sign_in'",
+      "connection": "cosmos-db-905_DOCUMENTDB",
+      "direction": "in"
+    },
+    {
+      "type": "documentDB",
+      "name": "usersAvailable",
+      "databaseName": "chatbot-db-905",
+      "collectionName": "userEvents",
+      "sqlQuery": "SELECT c.userid, c.empid from c where c.expecting = 'nothing' and c.flow = 1",
+      "connection": "cosmos-db-905_DOCUMENTDB",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}

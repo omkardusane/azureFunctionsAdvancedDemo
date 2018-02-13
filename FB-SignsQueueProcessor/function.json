@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "name": "message",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "sign-q",
+      "connection": "AzureWebJobsDashboard"
+    },
+    {
+      "type": "queue",
+      "name": "messageToSend",
+      "queueName": "send-q",
+      "connection": "AzureWebJobsDashboard",
+      "direction": "out"
+    },
+    {
+      "type": "documentDB",
+      "name": "userEvent",
+      "databaseName": "chatbot-db-905",
+      "collectionName": "userEvents",
+      "createIfNotExists": false,
+      "connection": "cosmos-db-905_DOCUMENTDB",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

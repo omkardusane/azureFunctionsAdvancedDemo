@@ -1,0 +1,24 @@
+{
+  "name": "azurospacebot",
+  "version": "1.0.0",
+  "description": "Demo of serverless with azure",
+  "main": "index.js",
+  "dependencies": {
+    "moment": "^2.20.1",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omkardusane/azureFunctionsAdvancedDemo.git"
+  },
+  "author": "Omkar Dusane (omkardusane@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omkardusane/azureFunctionsAdvancedDemo/issues"
+  },
+  "homepage": "https://github.com/omkardusane/azureFunctionsAdvancedDemo#readme"
+}

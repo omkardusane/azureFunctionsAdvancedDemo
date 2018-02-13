@@ -1,0 +1,35 @@
+{
+  "bindings": [
+    {
+      "name": "receivedMessage",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "received-q",
+      "connection": "AzureWebJobsDashboard"
+    },
+    {
+      "type": "queue",
+      "name": "newUserQ",
+      "queueName": "new-user-q",
+      "connection": "AzureWebJobsDashboard",
+      "direction": "out"
+    },
+    {
+      "type": "queue",
+      "name": "signQ",
+      "queueName": "sign-q",
+      "connection": "AzureWebJobsDashboard",
+      "direction": "out"
+    },
+    {
+      "type": "documentDB",
+      "name": "documents",
+      "databaseName": "chatbot-db-905",
+      "collectionName": "userEvents",
+      "sqlQuery": "select top 3 * from c where c.userid = {sender} order by c._ts desc",
+      "connection": "cosmos-db-905_DOCUMENTDB",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
